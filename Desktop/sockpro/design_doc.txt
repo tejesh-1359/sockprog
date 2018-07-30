@@ -1,1 +1,13 @@
 readme
+
+To run the project:
+
+Download the repository
+and compile it using
+
+          make -f makefile.mk normal
+          
+ Steps:
+ 
+ 1. use ./myserver to launch the server
+ 2. use ./myclient to launch the client ----  multiple clients can be launched
