@@ -1,22 +1,13 @@
-                                      IP table update using client-server architecture 
- 
-The aim of this project is to achieve IP table updates using socket programming. Server will send updates to all the other clients except the one which sent it.  Any client which receives an update for IP table he will forward it to the server machine and in turn server machine will do the job of sending the update to all remaining machine. To implement this, we will use the multiple client and single server architecture.
+readme
 
- Client server architecture 
-This type of architecture includes one or more clients connected to a central server over an internet connection. The client server architecture is pretty much like a request reply mechanism. 
-The client requests the server and the server replies to it. The server can get multiple requests simultaneously but can reply to only one client at a time. There can be scheduling of the requests based on the priority of the requests. This can be achieved through different communication protocols. One such is UDP which enables process to process communication. 
+To run the project:
+
+Download the repository
+and compile it using
+
+          make -f makefile2.mk normal
+          
+ Steps:
  
- 
- 
- Socket programming 
-A socket is an internal endpoint used to send or receive information within a node in the network. Every socket has a socket address which is the IP address and the port number. Associating socket with the socket address is called binding. Sockets allow communication through two different processes over the same machine or different machines. There are types of sockets but predominantly there are stream and datagram sockets which are used in TCP and UDP respectively. Socket programming is a way of connecting two sockets over a network to enable communication between them. 
- 
- Design 
-1. Packet and IP table The protocol packet has two fields and is sent using UDP/IP packet.  First field indicates the type of update if it is to add or delete entry. Second field indicates IP for which the route is to be updated. The IP table has the destination IP address and the net hop as its attributes. The packet is as shown below. 
- 
- 
- 
- 
-2.   Protocol description 
-Protocol: 
-1. Extract type field from packet  2. If type ==1 1. Check if there is entry in IP table for the new route. 2. If yes do not update the IP table 3. Else if make an entry IP table and also forward the update to server. 3. If type == 2  1. Check in IP table if the entry is there and also the next hop is the one from whom update is received, if yes delete else keep the entry 
+ 1. use ./myserver to launch the server
+ 2. use ./myclient to launch the client ----  multiple clients can be launched
