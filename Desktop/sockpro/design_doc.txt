@@ -11,3 +11,12 @@ and compile it using
  
  1. use ./myserver to launch the server
  2. use ./myclient to launch the client ----  multiple clients can be launched
+
+
+
+
+
+Things not done:
+
+1.The ip table craeted has the port numbers...The entries should actually be changed to New host ip and subnet mask etc.
+2.The server updating the other clients of its data but not the data coming from the other clients -- not fixed this issue.
